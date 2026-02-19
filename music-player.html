@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player - By Memoona Kolachi</title>
+    <link rel="stylesheet" href="music-player.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <!-- Header -->
+            <div class="player-header">
+                <h1><i class="fas fa-music"></i> Music Player</h1>
+                <p class="subtitle">Enjoy Your Favorite Music</p>
+            </div>
+
+            <!-- Album Art Section -->
+            <div class="album-art-container">
+                <div class="album-art rotating" id="albumArt">
+                    <i class="fas fa-compact-disc"></i>
+                </div>
+            </div>
+
+            <!-- Song Information -->
+            <div class="song-info">
+                <h2 class="song-title" id="songTitle">Select a song to play</h2>
+                <p class="artist-name" id="artistName">Artist Name</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="time current-time" id="currentTime">0:00</div>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                    <div class="progress-dot" id="progressDot"></div>
+                </div>
+                <div class="time total-time" id="totalTime">0:00</div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button class="control-btn" id="shuffleBtn" title="Shuffle: OFF">
+                    <i class="fas fa-random"></i>
+                </button>
+                <button class="control-btn" id="prevBtn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-btn" id="playBtn" title="Play">
+                    <i class="fas fa-play" id="playIcon"></i>
+                </button>
+                <button class="control-btn" id="nextBtn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="control-btn" id="repeatBtn" title="Repeat: OFF">
+                    <i class="fas fa-redo"></i>
+                </button>
+            </div>
+
+            <!-- Volume Control -->
+            <div class="volume-container" id="volumeContainer">
+                <button class="volume-btn" id="volumeBtn" title="Mute">
+                    <i class="fas fa-volume-up" id="volumeIcon"></i>
+                </button>
+                <div class="volume-bar" id="volumeBar" title="Drag to adjust volume">
+                    <div class="volume-progress" id="volumeProgress"></div>
+                </div>
+                <span class="volume-percentage" id="volumePercentage" title="Current volume level">70%</span>
+            </div>
+
+            <!-- Playlist Section -->
+            <div class="playlist-container">
+                <div class="playlist-header">
+                    <h3 class="playlist-title">
+                        <i class="fas fa-list-ul"></i> Playlist
+                    </h3>
+                    <div class="playlist-controls">
+                        <button class="playlist-btn active" id="autoplayBtn" title="Autoplay: ON">
+                            <i class="fas fa-play-circle"></i> Auto
+                        </button>
+                    </div>
+                </div>
+                <ul class="playlist" id="playlist"></ul>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="player-footer">
+                <p>Created by Memoona Kolachi</p>
+            </div>
+        </div>
+
+        <!-- Background Animation -->
+        <div class="background-animation">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audio"></audio>
+
+    <script src="music-player.js"></script>
+</body>
+</html>
